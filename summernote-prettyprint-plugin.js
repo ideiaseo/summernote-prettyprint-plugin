@@ -105,16 +105,16 @@
       var select = '<select class="form-control" id="code-language"><option>' + languages.join('</option><option>') + '</option></select>';
 
       var dialogOption = {
-        title: lang.dialog.title,
+        title: lang.dialogPrettyfi.title,
         body: '<div class="form-group">' +
-        '<label>' + lang.dialog.selectLabel + '</label>' +
+        '<label>' + lang.dialogPrettyfi.selectLabel + '</label>' +
         select +
         '</div>' +
         '<div class="form-group">' +
-        '<label>' + lang.dialog.codeLabel + '</label>' +
+        '<label>' + lang.dialogPrettyfi.codeLabel + '</label>' +
         '<textarea class="form-control" id="code" rows="7"></textarea>' +
         '</div>',
-        footer: '<button href="#" id="btn-add" class="btn btn-primary">' + lang.dialog.button + '</button>',
+        footer: '<button href="#" id="btn-add" class="btn btn-primary">' + lang.dialogPrettyfi.button + '</button>',
         closeOnEscape: true
       };
 
@@ -133,7 +133,7 @@
       var _options = $.extend(innerOptions, options);
 
       var $node = $('<pre>', {
-        class: 'prettyprint linenums:0'
+        class: 'prettyprint linenums'
       });
       var $code = $('<code>');
       $code.html(_options.code.replace(/</g,"&lt;").replace(/>/g,"&gt;"));
@@ -176,12 +176,10 @@
 
     this.events = {
       'summernote.init': function(we, e) {
-
         self.init();
       },
       'summernote.change': function (we, contents) {
-        prettyPrint();
-        console.log(contents);
+        prettyPrint(contents);
       }
     };
   };
@@ -189,7 +187,7 @@
   $.extend(true, $.summernote, {
     lang: {
       'en-US': {
-        dialog: {
+        dialogPrettyfi: {
           title: 'Insert fragment code into editor',
           selectLabel: 'Choose your language',
           codeLabel: 'Type your code',
@@ -199,7 +197,17 @@
           tooltip: 'Insert code'
         }
       },
-      'pt-BR': {}
+      'pt-BR': {
+        dialogPrettyfi: {
+          title: 'Adicionar fragmento de código ao editor',
+          selectLabel: 'Escolha a linguagem',
+          codeLabel: 'Digite o seu código aqui',
+          button: 'Inserir código'
+        },
+        button: {
+          tooltip: 'Adicionar código'
+        }
+      }
     },
     plugins: {
       'prettyprint': summernotePrettyprint

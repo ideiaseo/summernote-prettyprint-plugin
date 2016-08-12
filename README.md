@@ -51,6 +51,11 @@ Run the script below when document is ready!
 
 TODO: Write history
 
+## Todo
+
+- [ ] Add button parameter option
+- [ ] Add languages support in option
+
 ## Credits
 
 TODO: Write credits
