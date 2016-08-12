@@ -34,7 +34,11 @@ Run the script below when document is ready!
 ```html
 <script>
   $(document).ready(function() {
-    $('#summernote').summernote();
+    $('#summernote').summernote({
+      toolbar: [
+        ['insert', ['prettify']]
+      ]
+    });
   });
 </script>
 ```
