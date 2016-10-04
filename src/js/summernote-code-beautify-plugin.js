@@ -32,8 +32,7 @@
     var $editor = context.layoutInfo.editor;
     var lang = options.langInfo;
 
-    var prettyprintOpitions = {
-    };
+    var prettyprintOpitions = {};
 
     options.prettyprint = $.extend(prettyprintOpitions, options.prettyprint);
 
